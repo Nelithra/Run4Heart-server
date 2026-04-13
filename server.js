@@ -5,11 +5,9 @@ const cors     = require('cors');
 
 const app = express();
 
-// Fix CORS to allow live-server
-app.use(cors({
-  origin: ['http://127.0.0.1:8080', 'http://localhost:8080', 'file://'],
-  credentials: true
-}));
+
+// Allow all origins (Netlify, localhost, etc.)
+app.use(cors());
 
 app.use(express.json());
 
